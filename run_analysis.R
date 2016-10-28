@@ -5,17 +5,17 @@ library(tidyr)
 library(dplyr)
 
 # Read in the data that applies to both the train and test data sets
-features <- fread('UCI HAR Dataset/features.txt')
+features <- read.table('UCI HAR Dataset/features.txt')
 
 # Read in the train data
-train_subject <- fread('UCI HAR Dataset/train/subject_train.txt')
-train_x <- fread('UCI HAR Dataset/train/X_train.txt')
-train_y <- fread('UCI HAR Dataset/train/y_train.txt')
+train_subject <- read.table('UCI HAR Dataset/train/subject_train.txt')
+train_x <- read.table('UCI HAR Dataset/train/X_train.txt')
+train_y <- read.table('UCI HAR Dataset/train/y_train.txt')
 
 # Read in the test data
-test_subject <- fread('UCI HAR Dataset/test/subject_test.txt')
-test_x <- fread('UCI HAR Dataset/test/X_test.txt')
-test_y <- fread('UCI HAR Dataset/test/Y_test.txt')
+test_subject <- read.table('UCI HAR Dataset/test/subject_test.txt')
+test_x <- read.table('UCI HAR Dataset/test/X_test.txt')
+test_y <- read.table('UCI HAR Dataset/test/Y_test.txt')
 
 # Set the dataset column names to be the values in the list of features
 names(train_x) <- features$V2

@@ -43,8 +43,8 @@ test_y$activity_label <- mapvalues(test_y$activity_label,
 
 # Add the activity label data to the feature vector data
 # This is Step 3: "Uses descriptive activity names to name the activities in the data set"
-train_x <- mutate(train_x, activity_label = train_y$activity_label)
-test_x <- mutate(test_x, activity_label = test_y$activity_label)
+train_x$activity_label <- train_y$activity_label
+test_x$activity_label <- test_y$activity_label
 
 # We don't need the train_y or test_y files now that the data is in the train_x and test_x files, so release that memory
 rm('train_y')
@@ -55,8 +55,8 @@ names(train_subject) <- c("subject_id")
 names(test_subject) <- c("subject_id")
 
 # Add the subject id data to the feature vector data
-train_x <- mutate(train_x, subject_id = train_subject$subject_id)
-test_x <- mutate(test_x, subject_id = test_subject$subject_id)
+train_x$subject_id <- train_subject$subject_id
+test_x$subject_id <- test_subject$subject_id
 
 # We don't need the train_subject or test_subject data sets now that the data is in the train_x and test_x files, so release that memory
 rm('train_subject')

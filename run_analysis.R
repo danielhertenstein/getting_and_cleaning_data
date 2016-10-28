@@ -70,4 +70,5 @@ rm('train_x')
 rm('test_x')
 
 # "Extracts only the measurements on the mean and standard deviation for each measurement" (Step 2)
+# Do something about the repeated column names
 activity_data <- select(activity_data, grep("[Mm]ean|std|dataset|activity_label|subject_id", names(activity_data)))
